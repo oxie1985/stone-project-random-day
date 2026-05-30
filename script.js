@@ -18,7 +18,7 @@ button.addEventListener('click', async () => {
 
     try {
         // Construct the URL with the parameters
-        let url = `https://corsproxy.io/?https://events.historylabs.io/date?month=${month}&day=${day}&minYear=${minYear}&maxYear=${maxYear}`;
+        let url = `https://corsproxy.io/?url=https://events.historylabs.io/date?month=${month}&day=${day}&minYear=${minYear}&maxYear=${maxYear}`;
 
         let response = await fetch(url);
         let data = await response.json();
@@ -37,8 +37,8 @@ button.addEventListener('click', async () => {
             // Loop through each event in the array
             eventsList.forEach(event => {
                 html += `
-                    <div class="event" style="margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
-                        <h3 style="color: #2c3e50;">${event.year}</h3>
+                    <div class="event" style="margin-bottom: 1.5rem; border-bottom: 1px solid #000000; padding-bottom: 1rem;">
+                        <h3 style="color: #000000;">${event.year}</h3>
                         <p style="font-size: 1.1rem;">${event.content}</p>
                     </div>
                 `;
@@ -56,3 +56,5 @@ button.addEventListener('click', async () => {
         output.innerHTML = "Error loading data. Please check your connection or parameters.";
     }
 });
+
+let newLine = "";
